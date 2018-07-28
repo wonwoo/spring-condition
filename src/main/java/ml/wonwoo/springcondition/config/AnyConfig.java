@@ -1,10 +1,10 @@
 package ml.wonwoo.springcondition.config;
 
-import ml.wonwoo.springcondition.sample.Bar;
 import ml.wonwoo.springcondition.sample.Foo;
 import ml.wonwoo.springcondition.sample.FooService;
 import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -30,10 +30,10 @@ public class AnyConfig {
     static class FooCondition {
 
     }
-    @ConditionalOnBean(Bar.class)
+
+    @ConditionalOnProperty(prefix = "foo", name = "name")
     static class BarCondition {
 
     }
   }
-
 }

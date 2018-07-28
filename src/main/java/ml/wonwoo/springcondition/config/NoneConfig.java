@@ -30,6 +30,7 @@ public class NoneConfig {
     static class FooCondition {
 
     }
+
     @ConditionalOnBean(Bar.class)
     static class BarCondition {
 
